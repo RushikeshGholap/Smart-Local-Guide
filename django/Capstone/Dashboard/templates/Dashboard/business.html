@@ -1,0 +1,156 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 border-y">
+    <div class="content">
+        <h2 class="mb-2 lh-sm">Business Map - Pennsylvania</h2>
+        <p class="text-body-tertiary lead mb-2">
+            Click on a **table row** to highlight the corresponding business location on the map.
+        </p>
+
+        <div class="row g-4 mb-9 mt-2">
+            <!-- Pennsylvania Business Map -->
+            <div class="col-xl-6">
+                <div class="card shadow-none border">
+                    <div class="card-header p-4 border-bottom bg-body">
+                        <h4 class="text-body mb-0">Pennsylvania Business Map</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div id="pa-business-map" style="min-height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Table -->
+            <div class="col-xl-6">
+                <div class="card shadow-none border">
+                    <div class="card-header p-4 border-bottom bg-body">
+                        <h4 class="text-body mb-0">Business Listings</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table fs-9 mb-0 border-top border-translucent">
+                                <thead>
+                                    <tr>
+                                        <th>Business Name</th>
+                                        <th>Category</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="business-table">
+                                    {% for business in businesses %}
+                                    <tr class="business-row"
+                                        data-lat="{{ business.latitude }}" 
+                                        data-lng="{{ business.longitude }}" 
+                                        data-name="{{ business.business_name }}"
+                                        data-category="{{ business.category }}"
+                                        data-rating="{{ business.avg_rating }}">
+                                        <td>{{ business.business_name }}</td>
+                                        <td>{{ business.category }}</td>
+                                        <td>{{ business.avg_rating }}</td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="3" class="text-center">No businesses found.</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row align-items-center py-3">
+                            <div class="col">
+                                <p class="mb-0">Showing {{ businesses.start_index }} to {{ businesses.end_index }} of {{ total_businesses }} businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load ECharts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var chart = echarts.init(document.getElementById('pa-business-map'));
+
+                fetch("https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/pa_pennsylvania_zip_codes_geo.min.json")
+                .then(response => response.json())
+                .then(geoJson => {
+                    echarts.registerMap('Pennsylvania', geoJson);
+
+                    var businessData = {{ business_geojson|safe }};
+                    
+                    function getColorByRating(rating) {
+                        if (!rating) return '#aaaaaa'; 
+                        const green = [0, 255, 0];
+                        const red = [255, 0, 0];
+
+                        let ratio = (rating - 1) / 4;
+                        let color = [
+                            Math.round(red[0] + ratio * (green[0] - red[0])),
+                            Math.round(red[1] + ratio * (green[1] - red[1])),
+                            Math.round(red[2] + ratio * (green[2] - red[2]))
+                        ];
+                        return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+                    }
+
+                    let scatterData = businessData.features.map(feature => ({
+                        name: feature.properties.name,
+                        value: feature.geometry.coordinates,
+                        symbolSize: 10,
+                        itemStyle: { color: getColorByRating(feature.properties.rating) },
+                        properties: feature.properties
+                    }));
+
+                    var option = {
+                        title: { text: "Business Locations in Pennsylvania", left: "center" },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: function (params) {
+                                if (params.data && params.data.properties) {
+                                    return `<b>${params.data.properties.name}</b><br>Category: ${params.data.properties.category}<br>Rating: ${params.data.properties.rating}`;
+                                }
+                            }
+                        },
+                        geo: { map: 'Pennsylvania', roam: true, zoom: 8 },
+                        series: [{
+                            name: "Businesses",
+                            type: 'scatter',
+                            coordinateSystem: 'geo',
+                            data: scatterData
+                        }]
+                    };
+
+                    chart.setOption(option);
+
+                    // Click event on table rows
+                    const rows = document.querySelectorAll('.business-row');
+                    rows.forEach(row => {
+                        row.addEventListener('click', function() {
+                            const lat = parseFloat(this.dataset.lat);
+                            const lng = parseFloat(this.dataset.lng);
+                            if (!isNaN(lat) && !isNaN(lng)) {
+                                chart.setOption({
+                                    series: [{
+                                        name: "Businesses",
+                                        type: 'scatter',
+                                        coordinateSystem: 'geo',
+                                        data: scatterData.concat([{
+                                            name: this.dataset.name,
+                                            value: [lng, lat],
+                                            symbolSize: 20,
+                                            itemStyle: { color: "yellow" }
+                                        }])
+                                    }]
+                                });
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error("Error loading Pennsylvania geoJSON data: ", error));
+            });
+        </script>
+    </div>
+</div>
+{% endblock %}

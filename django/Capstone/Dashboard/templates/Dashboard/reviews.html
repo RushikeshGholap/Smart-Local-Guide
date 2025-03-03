@@ -1,0 +1,72 @@
+{% extends 'Dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 border-y">
+    <div class="row align-items-end justify-content-between pb-5 g-3">
+        <div class="col-auto">
+            <h3>Latest Reviews</h3>
+            <p class="text-body-tertiary lh-sm mb-0">User reviews from different businesses</p>
+        </div>
+    </div>
+
+    <div class="table-responsive mx-n1 px-1 scrollbar">
+        <table class="table fs-9 mb-0 border-top border-translucent">
+            <thead>
+                <tr>
+                    <th class="align-middle">Customer</th>
+                    <th class="align-middle">Rating</th>
+                    <th class="align-middle" style="max-width:350px;">Review</th>
+                    <th class="align-middle">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <td class="align-middle">
+                        <h6 class="mb-0">{{ review.customer_name }}</h6>
+                    </td>
+                    <td class="align-middle">
+                        {% for _ in "12345"|slice:":review.rating"|make_list %}
+                            <span class="fa fa-star text-warning"></span>
+                        {% endfor %}
+                    </td>
+                    <td class="align-middle review" style="max-width:350px;">
+                        <p class="fs-9 fw-semibold text-body-highlight mb-0">{{ review.text|truncatewords:20 }}</p>
+                    </td>
+                    <td class="align-middle text-end">{{ review.time|date:"M d, Y" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center">No reviews available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    {% if reviews.has_other_pages %}
+    <div class="row align-items-center py-3">
+        <div class="col">
+            <p class="mb-0">
+                Showing {{ reviews.start_index }} to {{ reviews.end_index }} of {{ total_reviews }} reviews
+            </p>
+        </div>
+        <div class="col-auto">
+            <nav>
+                <ul class="pagination">
+                    {% if reviews.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ reviews.previous_page_number }}">Previous</a></li>
+                    {% endif %}
+                    <li class="page-item active"><span class="page-link">{{ reviews.number }}</span></li>
+                    {% if reviews.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ reviews.next_page_number }}">Next</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

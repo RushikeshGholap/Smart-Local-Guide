@@ -1,1 +1,36 @@
 data/*
+env/**
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Media and static files (if managed, otherwise keep)
+django/media/
+django/static/
+
+# Django specific files
+*.log
+*.pot
+local_settings.py
+
+# System files
+.DS_Store
+*/Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+
+# Packages and distribution
+*.egg-info/
+*/dist/
+*/build/
+
+# Test and coverage reports
+htmlcov/
+.tox/
+.coverage
