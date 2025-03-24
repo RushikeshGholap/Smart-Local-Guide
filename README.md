@@ -68,7 +68,7 @@ All **filtering criteria** (e.g., removing low-rated and inactive businesses, ig
 ---
 
 ## Capstone Presentation
-To view a comprehensive walkthrough of our project’s methodology, data filtering criteria, and next steps, please see our **[Capstone Presentation](LINK_TO_CAPSTONE_PRESENTATION)**. This document covers detailed insights into the decisions and strategies adopted throughout development.
+To view a comprehensive walkthrough of our project’s methodology, data filtering criteria, and next steps, please see our **[Capstone Presentation](https://docs.google.com/presentation/d/13t4itNW0MNPbDdH4nBo2e_Wpl3p4tFpvn1CFQEFywoQ/)**. This document covers detailed insights into the decisions and strategies adopted throughout development.
 
 ---
 
