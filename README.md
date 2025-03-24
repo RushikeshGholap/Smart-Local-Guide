@@ -132,5 +132,3 @@ We are working as team on Capstone. Only our team members can make changes or co
 This project is licensed under the [MIT License](LICENSE). Feel free to use, distribute, or modify this code under the terms of the license.
 
 ---
-
-**Thank you** for visiting our repository! We look forward to collaborating with you to make **Smart Local Guide** a powerful and user-friendly local recommender system. If you have any questions, please open an issue or contact one of our team members.
