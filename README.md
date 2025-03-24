@@ -5,17 +5,54 @@ Welcome to our **Smart Local Guide** repository. This project aims to develop a 
 ---
 
 ## Table of Contents
-1. [Project Overview](#project-overview)  
-2. [Key Features](#key-features)  
-3. [Data Pipeline](#data-pipeline)  
-4. [Database & Filtering](#database--filtering)  
-5. [Future Enhancements](#future-enhancements)  
-6. [Capstone Presentation](#capstone-presentation)  
-7. [Capstone Report](#capstone-report)  
-7. [Capstone Playground Notebooks Merged](#capstone-playground-notebooks-merged)  
-8. [Contributing](#contributing)  
-9. [License](#license)
+1. [Team Overview](#team-overview)  
+2. [Project Overview](#project-overview)  
+3. [Key Features](#key-features)  
+4. [Data Pipeline](#data-pipeline)  
+5. [Database & Filtering](#database--filtering)  
+6. [Future Enhancements](#future-enhancements)  
+7. [Capstone Presentation](#capstone-presentation)  
+8. [Capstone Report](#capstone-report)  
+9. [Capstone Playground Notebooks Merged](#capstone-playground-notebooks-merged)  
+10. [Contributing](#contributing)  
+11. [License](#license)
 
+---
+
+## Team Overview
+**Group 9: The Eagles** brings together a diverse range of expertise to develop the **Smart Local Guide** recommender system. Each member contributed to various aspects of the project, ensuring a well-rounded approach and a thorough execution of tasks.
+
+### Team Members & Roles
+- **Rushikesh Gholap**  
+  *Data discovery, Data Flow, Architecture & Exploratory Data Analysis (EDA)*  
+
+- **Jelitta James**  
+  *Data Cleaning, Pre-processing & EDA, Noise analysis*  
+
+- **Hassaan Alvi**  
+  *Data Cleaning, Reports, Pre-processing & EDA*  
+
+- **Priyanka Choudhary**  
+  *Pre-processing, Documentation, EDA & Feature Engineering*  
+
+- **Krish Balar**  
+  *Data Cleaning, Pre-processing, EDA & Feature Engineering*  
+
+### Collaboration
+Our team collaborated regularly via:
+- **Virtual Meetings**: Consistent Zoom calls to discuss progress, roadblocks, and future milestones.  
+- **Daily Messaging**: Rapid communication through instant messaging platforms to address day-to-day queries and updates.  
+- **Shared Tools**: Google Drive for documentation and file sharing, GitHub for version control and code collaboration.
+
+---
+
+## Project Overview
+**Smart Local Guide** is designed to offer personalized recommendations by analyzing:
+- **Large-scale review data** (ratings, text, timestamps) from Google Local Reviews.  
+- **Business metadata** (category, location, average ratings, etc.).  
+- **User engagement metrics** (review frequency, sentiment analysis).  
+
+Our goal is to seamlessly recommend businesses (initially focusing on Pennsylvania) while addressing real-world data challenges such as data cleaning, outlier management, and noise detection.
 ---
 
 ## Project Overview
@@ -88,6 +125,7 @@ This is our merged EDA notebook were you can find code snippets, data filtering 
 
 ## Contributing
 We are working as team on Capstone. Only our team members can make changes or commit to this repo. Its managed by out Capstone Team.
+
 ---
 
 ## License
