@@ -73,8 +73,7 @@ To view a comprehensive walkthrough of our project’s methodology, data filteri
 ---
 
 ## Contributing
-We welcome contributions from the community. Please open an issue or create a pull request for any proposed changes, improvements, or bug fixes.
-
+We are working as team on Capstone. Only our team members can make changes or commit to this repo. Its managed by out Capstone Team.
 ---
 
 ## License
