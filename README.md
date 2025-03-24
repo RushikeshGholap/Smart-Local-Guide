@@ -11,8 +11,9 @@ Welcome to our **Smart Local Guide** repository. This project aims to develop a 
 4. [Database & Filtering](#database--filtering)  
 5. [Future Enhancements](#future-enhancements)  
 6. [Capstone Presentation](#capstone-presentation)  
-7. [Contributing](#contributing)  
-8. [License](#license)
+7. [Capstone Report](#capstone-report)  
+8. [Contributing](#contributing)  
+9. [License](#license)
 
 ---
 
@@ -69,6 +70,18 @@ All **filtering criteria** (e.g., removing low-rated and inactive businesses, ig
 
 ## Capstone Presentation
 To view a comprehensive walkthrough of our project’s methodology, data filtering criteria, and next steps, please see our **[Capstone Presentation](https://docs.google.com/presentation/d/13t4itNW0MNPbDdH4nBo2e_Wpl3p4tFpvn1CFQEFywoQ/)**. This document covers detailed insights into the decisions and strategies adopted throughout development.
+
+---
+
+
+## Capstone Report
+To view a well documented rerpot and  walkthrough of our project’s methodology, data filtering criteria, please see our **[Capstone Report](https://docs.google.com/presentation/d/13t4itNW0MNPbDdH4nBo2e_Wpl3p4tFpvn1CFQEFywoQ/](https://github.com/RushikeshGholap/Capstone-Google-Maps-Recommender/blob/main/Presentation%26Reports/Exploratory%20Data%20Analysis%20Report%20G9-The%20Eagles.pdf))**. This document covers detailed EDA into the decisions and strategies adopted throughout development.
+
+---
+
+
+## Capstone EDA Merged
+This is our merged EDA notebook were you can find code snippets, data filtering criteria, please see our **[Capstone EDA Merged](https://github.com/RushikeshGholap/Capstone-Google-Maps-Recommender/blob/main/Main_Cleaning_dumping_%26_EDA_merged.ipynb))**. This notebook is merged version of all members working on there respective playground notebook, thus may not be in best descriptive state, but we will try to update it along with Capstone II. Usage of this notebook is how we work with data and perform EDA and Analysis. 
 
 ---
 
