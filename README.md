@@ -27,16 +27,16 @@ Welcome to our **Smart Local Guide** repository. This project aims to develop a 
   *Data discovery, Data Flow, Architecture & Exploratory Data Analysis (EDA)*  
 
 - **Jelitta James**  
-  *Data Cleaning, Pre-processing & EDA, Noise analysis*  
+  *Data Cleaning, Pre-processing & Business Exploratory Data Analysis (EDA), Noise analysis*  
 
 - **Hassaan Alvi**  
-  *Data Cleaning, Reports, Pre-processing & EDA*  
+  *Project Management, Data Cleaning, Reports, Pre-processing & Exploratory Data Analysis (EDA)*  
 
 - **Priyanka Choudhary**  
-  *Pre-processing, Documentation, EDA & Feature Engineering*  
+  *Pre-processing, Data Pipelines, Documentations, Exploratory Data Analysis (EDA) & Feature Engineering*  
 
 - **Krish Balar**  
-  *Data Cleaning, Pre-processing, EDA & Feature Engineering*  
+  *Data Cleaning, Pre-processing, Recommendation Engine, Experimental Exploratory Data Analysis (EDA) & Feature Engineering*  
 
 ### Collaboration
 Our team collaborated regularly via:
