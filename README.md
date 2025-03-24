@@ -76,7 +76,7 @@ To view a comprehensive walkthrough of our project’s methodology, data filteri
 
 
 ## Capstone Report
-To view a well documented rerpot and  walkthrough of our project’s methodology, data filtering criteria, please see our **[Capstone Report](https:/github.com/RushikeshGholap/Capstone-Google-Maps-Recommender/blob/main/Presentation%26Reports/Exploratory%20Data%20Analysis%20Report%20G9-The%20Eagles.pdf)**. This document covers detailed EDA into the decisions and strategies adopted throughout development.
+To view a well documented rerpot and  walkthrough of our project’s methodology, data filtering criteria, please see our **[Capstone Report](https://github.com/RushikeshGholap/Capstone-Google-Maps-Recommender/blob/main/Presentation%26Reports/Exploratory%20Data%20Analysis%20Report%20G9-The%20Eagles.pdf)**. This document covers detailed EDA into the decisions and strategies adopted throughout development.
 
 ---
 
