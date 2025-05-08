@@ -1,0 +1,44 @@
+
+---- eda for users---
+
+====PRI currently working on====
+PRI--------How do users’ rating behaviors compare to their sentiment behaviors?
+
+
+Do users with longer lifetimes (or more total reviews) have different rating patterns or sentiments than newer/less active users?
+krish ----------done-------- When are users most active in terms of year/month?
+Are there correlations between how quickly businesses respond to a user and that user’s rating or subsequent reviews?
+
+----eda for business ----- 
+Hassaan-------- Which categories or states have the highest average ratings or volumes of reviews?
+Hassaan--------- How does price relate to avg_rating or the number of reviews?
+Do certain categories have more engaged customers who write more reviews?
+Average rating per category
+Median number of reviews per category
+Price distribution within each category
+
+krish ------------------Are there businesses that maintain a high rating despite many reviews (or vice versa)?
+How does business response to reviews correlate with their overall rating or review sentiment?
+
+
+---- mixed----
+
+How many total reviews (rows in Reviews) connect these users to businesses?
+Is there a small set of “power reviewer” users that write the majority of reviews? Are there a few businesses with disproportionately high review counts?
+
+
+Check the distribution of how many businesses each user has reviewed (do they tend to review just one business or multiple?).
+Check how many unique users reviewed each business (do some businesses have a very diverse user base while others get repeated reviews from the same users?).
+
+business review distribution
+---done---Geospatial analysis
+hours opened analysis (weekend, weekdays)
+time distribution for reviews
+---done---sentiment score analysis
+fake reviews analysis
+univariate, multivariate analysis
+
+correlation between MISC feauters and ratings
+
+
+----done ---- noise detection 
